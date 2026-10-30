@@ -8,14 +8,18 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#234d36">
 
-  <!-- Google Ads tag: records outbound affiliate clicks, NOT confirmed purchases. -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18483690321"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18483690321');
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18483690321">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'AW-18483690321');
+</script>
+
+  <script>
     function trackAffiliateClick(url, packageName) {
       var navigated = false;
       function go() {
@@ -24,6 +28,10 @@
         window.location.href = url;
       }
       try {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18483690321/ProDentim11',
+          'event_callback': go
+        });
         gtag('event', 'affiliate_outbound_click', {
           event_category: 'affiliate',
           event_label: 'ProDentim - ' + packageName,
@@ -363,4 +371,3 @@
   </div>
 </body>
 </html>
-
